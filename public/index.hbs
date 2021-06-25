@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/css/leaflet.fullscreen.css" />
+<link rel="stylesheet" type="text/css" href="../css/leaflet.css" />
+	<link href="/img/favicon.png" rel="icon">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
+	<link href="css/typeahead.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/fontawesome/css/fontawesome.min.css"> <!-- load fontawesome -->
+	<link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css"> <!-- load fontawesome -->
+	<link rel="stylesheet" href="/css/bootstrap.min.css"> <!-- load bootstrap css -->
+	
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	
+	<meta charset="utf-8">
+	<title>InfoSec</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example">
+<div class="panel-group col-md-12 col-sm-12 col-xs-12 " id="accordion2">
+					<div class="panel panel-default">
+						<div class="panel-heading" data-toggle="collapse" data-target='#collapse2'>
+							<h4 class="panel-title collapsed intro" data-toggle="collapse" data-target='#collapse2'>
+                                    Location</h4>
+						</div>
+						<div class="panel-collapse collapse in" id="collapse2">
+							<div class="panel-body">
+								<div class="col-md-12 col-sm-12 col-xs-12 ">
+									<div class="form-row col-md-6">									
+										
+										<div class="form-group" id="peel9_search" style="display:nne">
+											<label class="required">Public Safety Locator</label>
+											<input type="text" id="peel9_locator" style="background-color:#e6f9ff; font-size:15px" class="typeahead form-control" name="peel9_locator" value="{{address}}" placeholder="Search in Public Safety Locator" required>
+										</div>
+										<div class="form-group">
+											<input class="form-control" id="street_number" style="color: black; display:none;">
+											<input class="form-control" id="route" style="color: black; display:none;">
+											<div class="form-group" style="margin-bottom: 0px;">
+												<div class="col-lg-9 input" style="padding-right:0; padding-left:0;">
+													<input type="text" id="addrs" class="form-control" name="addrs" placeholder="Street Number and Name" value="{{address}}" / required>
+												</div>
+												<div class="col-lg-3 input" style="padding-right:0; padding-left:0; margin-bottom:10px">
+													<input type="text" id="apt_no" class="form-control " name="apt_no" placeholder="Apt#" />
+												</div>
+											</div>
+										</div>
+										<div class="form-group" style="margin-top: -5px;">
+											<div class="input-group">
+												<input type="text" id="neighborhood" class="form-control" name="nghbd" placeholder="Neighborhood"> <span class="input-group-addon">-</span>
+												<input type="text" id="locality" class="form-control" name="city" placeholder="City">
+											</div>
+										</div>
+										<div class="form-group" style="margin-top: -5px;">
+											<div class="input-group">
+												<input type="text" id="administrative_area_level_2" class="form-control" name="county" placeholder="County"> <span class="input-group-addon">-</span>
+												<input type="text" id="administrative_area_level_1" class="form-control" name="state" placeholder="State"> <span class="input-group-addon">-</span>
+												<input type="text" id="postal_code" class="form-control" name="zip" placeholder="Zip Code">
+												<input type="text" id="country" class="form-control" name="country" placeholder="Country" style="display: none;">
+											</div>
+										</div>
+										<!-- this is necesseary field because handlebars does not automatically fills the location type selectpicker-->
+										      
+										<input type="text" id="lat" name="lat" style="color: black; display:none;">
+										<input type="text" id="lng" name="lng" style="color: black; display:none;">
+									</div>
+									<div class="col-md-6 col-sm-12 col-xs-12" id="map" style="height:200px;"></div>
+									
+									
+										
+								</div>
+								<!--col-md-12 ends-->
+							</div>
+							<!--form-row ends-->
+						</div>
+						<!--panel_collapse ends-->
+					</div>
+					<!--panel_default ends-->
+				</div>
+				
+</html>
+	<script src="/js/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/typeahead.bundle.min.js"></script>
+	<script src="/js/leaflet.js"></script>
+	<script src="/js/Leaflet.fullscreen.min.js"></script>
+<script src="/js/publicSafetyGeocoder.js"></script>
+<script>
+var map;
+map = L.map('map', {
+    center: [39.103119, -84.512016],
+    zoom: 17,    
+});
+addMap();
+map.invalidateSize();
+</script>
+
+
+
+
