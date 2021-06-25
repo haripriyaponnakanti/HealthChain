@@ -164,5 +164,5 @@ require('./app/routes')(app); // pass our application into our routes
 require("express-stream-json");
 
 server2.listen(3000)
-console.log('server started'); 			// shoutout to the user
+console.log('server started at 3000 port'); 			// shoutout to the user
 exports = module.exports = app; 						// expose app
