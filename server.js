@@ -146,7 +146,7 @@ HealthRecord.addNewBlock(
   })
 );
 
-res.json(JSON.stringify(HealthRecord, null, 4));			
+res.json(HealthRecord);			
 			
 			
 			
